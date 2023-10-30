@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-eqviv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNITO - Virtual Assistant</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="home">
+        <nav>
+            <ul>
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section2">Service</a></li>
+                <li><a href="#section3">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+<body  background="cse.jpg">
+    
+    
+    <div id="time">
+        <div class="circle" style="--clr:#ff2972;"> 
+            <div class="dots hr_dot"></div>
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="hh"></circle>
+            </svg>
+            <div id="hours">00</div>
+        </div>
+        <div class="circle" style="--clr:#f8e809;">
+            <div class="dots min_dot"></div>
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="mm"></circle>
+            </svg>
+            <div id="minutes">00</div>
+        </div>
+        <div class="circle" style="--clr:#23ee09;">
+            <div class="dots sec_dot"></div>    
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+             <circle cx="70" cy="70" r="70" id="ss"></circle>
+            </svg>
+            <div id="seconds">00</div>
+        </div>
+        <div class="ap">
+            <div id="ampm">AM</div>
+        </div>
+    </div>
+    <selection class="main">
+        <div class="image-container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>                                                                                                            
+            <h1>T E C H N I T O</h1>
+            <p>I'm a Virtual Assistant how can i help you</p>
+        </div>
+        <div class="input">
+            <button class="talk"><i class="fas fa-microphone-alt"></i></button>
+            <h1 class="content">click here to speak</h1>
+        </div>
+        <div id="section3">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+                <h2>ABOUT US<br>
+                <br></h2>
+            <h5>Welcome,<br>
+                This Technito<br>
+                People And Technology Have Created Access To  Many Opportunities For Many Industries To Be Many Competitive For This.
+                                  <br>Helping More Them And Studing Purpose ,Bussiness ,Web Pages Access
+                                    <br> we Deliver  Messsage Quickly And Response Technito
+                                                <br> Thank You For Coming</h5>
+
+        </div>
+    </selection>
+
+    <body>
+        <a class="gotop" href="#"><i class="fas fa-arrow-up"></i></a>
+    </body>
+
+
+    <script src="assistant.js"></Script>
+
+
+
+        <script>
+
+            setInterval(() =>{
+            let hours =document.getElementById('hours');
+            let minutes =document.getElementById('minutes');
+            let seconds =document.getElementById('seconds');
+            let ampn =document.getElementById('ampn');
+            
+            
+            let hh = document.getElementById('hh');
+            let mm = document.getElementById('mm');
+            let ss = document.getElementById('ss');
+                        
+            
+            let hr_dot=document.querySelector('.hr_dot');
+            let min_dot=document.querySelector('.min_dot');
+            let sec_dot=document.querySelector('.sec_dot');
+
+
+
+
+            let h = new Date().getHours();
+            let m = new Date().getMinutes();
+            let s = new Date().getSeconds();
+            let am = h >=12 ? "PM": "AM";
+
+
+if(h > 12){
+    h = h - 12;
+}
+
+         h=(h < 10) ? "0" + h : h;
+         m=(m < 10) ? "0" + m : m;
+         s=(s < 10) ? "0" + s : s;
+
+hours.innerHTML = h + "<br><span>Hours</span>";
+minutes.innerHTML = m + "<br><span>Minutes</span>";
+seconds.innerHTML = s + "<br><span>seconds</span>";
+ampm.innerHTML = am;
+
+
+hh.style.strokeDashoffset = 440 - (440 * h) / 12;
+mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+
+
+hr_dot.style.transform = 'rotate (${h * 30}deg)';
+min_dot.style.transform = 'rotate (${m * 30}deg)';
+sec_dot.style.transform = 'rotate (${s * 30}deg)';
+
+})
+
+</Script>
+</body>
+                  </html>
